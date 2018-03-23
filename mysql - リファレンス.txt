@@ -1,0 +1,28 @@
+MYSQLログイン
+mysql -u root -h localhost -p
+
+DB作成
+CREATE DATABASE データベース名 CHARACTER SET utf8;
+
+DBの削除
+drop database 削除したいデータベース名;
+
+DBの確認
+show databases;
+
+ユーザー一覧確認
+SELECT Host, User FROM mysql.user;
+
+show grants for 'ユーザ名'@'localhost';
+
+ユーザー作成
+CREATE USER 'ユーザー名'@"localhost" IDENTIFIED BY "OQZ52G3d*wIR";
+
+ユーザー作成・権限追加
+grant all on データベース名.* to 'ユーザー名'@'localhost' IDENTIFIED BY 'OQZ52G3d*wIR';
+
+パスワード変更
+set password for 'tokei_begin'@'153.156.73.133' = password('OQZ52G3d*wIR');
+
+ユーザー削除
+DROP USER 'ユーザー名'@'localhost';
